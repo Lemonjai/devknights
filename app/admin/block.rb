@@ -11,5 +11,5 @@ ActiveAdmin.register Block do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-
+  permit_params :title, :body, :position, :display, :show_title, :class_suffix, :is_published
 end
