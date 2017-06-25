@@ -34,6 +34,9 @@ gem 'devise'
 gem 'active_admin_editor', github: 'ejholmes/active_admin_editor'
 gem 'font-awesome-rails'
 gem 'bootstrap-sass'
+gem 'material_icons'
+gem 'autoprefixer-rails'
+gem 'normalize-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
