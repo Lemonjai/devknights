@@ -26,10 +26,11 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
+
+# CMS gem
+gem 'activeadmin'
 # User authenitcation
 gem 'devise'
-# CMS gem
-gem 'activeadmin', github: 'activeadmin'
 gem 'active_admin_editor'
 gem 'font-awesome-rails'
 gem 'bootstrap-sass'
