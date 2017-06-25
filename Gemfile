@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'activeadmin'
 # User authenitcation
 gem 'devise'
-gem 'active_admin_editor'
+gem 'active_admin_editor', github: 'ejholmes/active_admin_editor'
 gem 'font-awesome-rails'
 gem 'bootstrap-sass'
 

@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
-  ActiveAdmin.routes(self)
-  get 'pages/show'
+  
+  devise_for :students
 
-  get 'home/show'
+  get 'pages/show'
 
   resources :pages, only: [:show]
 
   root 'home#show'
 
-  # devise_for :students
-  # devise_for :publishers
-  # devise_for :developers
-  # devise_for :active_admins
+  ActiveAdmin.routes(self)
+
+  devise_for :developers, ActiveAdmin::Devise.config
+  devise_for :publishers, ActiveAdmin::Devise.config
+  devise_for :admin_users, ActiveAdmin::Devise.config
+ 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
