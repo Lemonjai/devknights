@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170625024921) do
+ActiveRecord::Schema.define(version: 20170625025954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,18 @@ ActiveRecord::Schema.define(version: 20170625024921) do
     t.index ["reset_password_token"], name: "index_active_admins_on_reset_password_token", unique: true
   end
 
+  create_table "blocks", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.string "position"
+    t.string "display"
+    t.boolean "show_title"
+    t.string "class_suffix"
+    t.string "is_published"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "developers", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -49,6 +61,17 @@ ActiveRecord::Schema.define(version: 20170625024921) do
     t.index ["reset_password_token"], name: "index_developers_on_reset_password_token", unique: true
   end
 
+  create_table "pages", force: :cascade do |t|
+    t.string "title"
+    t.integer "section_id"
+    t.text "body"
+    t.integer "order"
+    t.boolean "is_published"
+    t.boolean "menu_displayed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "publishers", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -64,6 +87,12 @@ ActiveRecord::Schema.define(version: 20170625024921) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_publishers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_publishers_on_reset_password_token", unique: true
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "students", force: :cascade do |t|
